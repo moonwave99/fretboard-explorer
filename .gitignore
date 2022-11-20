@@ -41,6 +41,7 @@ results
 
 test
 docs
+build
 
 # Coverage
 .nyc_output
