@@ -1,185 +1,200 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  min-height: 100%;
-  font-family: "Futura", "Arial", sans-serif;
-  font-size: 16px;
+    min-height: 100%;
+    font-family: "Futura", "Arial", sans-serif;
+    font-size: 16px;
 }
 
 body {
-  margin: 0;
-  min-height: 100%;
-  background-color: #c6edfc;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+    margin: 0;
+    min-height: 100%;
+    background-color: #c6edfc;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 figure {
-  margin: 0;
+    margin: 0;
 }
 
 footer {
-  background-color: #1b1f24;
-  padding: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-  text-align: center;
+    background-color: #1b1f24;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 footer a {
-  color: white;
+    color: white;
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .app .fretboard-container figure {
-  display: none;
+    display: none;
 }
 
 .app.show-fretboard .fretboard-container figure {
-  display: block;
+    display: block;
 }
 
 .system-view {
-  flex: 1;
+    flex: 1;
 }
 
 .fretboard-container {
-  background-color: #1b1f24;
+    background-color: #1b1f24;
 }
 
 .fretboard-container .fretboard {
-  max-width: 1200px;
-  margin: 1rem auto 0 auto;
+    max-width: 1100px;
+    margin: 1rem auto 0 auto;
 }
 
 .controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background-color: #1b1f24;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #1b1f24;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
 }
 
 .controls-center {
-  display: flex;
+    display: flex;
 }
 
 .controls label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .controls label > * {
-  margin-left: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .controls h1 {
-  font-size: 1rem;
-  margin: 0;
+    font-size: 1rem;
+    margin: 0;
 }
 
 .controls select,
 .controls button {
-  height: 1.75rem;
-  padding: 0 0.25rem;
-  border-radius: 0.25rem;
-  border: none;
+    height: 1.75rem;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+    border: none;
 }
 
 .controls button {
-  padding: 0 0.5rem;
+    padding: 0 0.5rem;
 }
 
 .system-list {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .playback-tray > *,
 .controls form > * {
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .system-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .system-view {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .show-fretboard .system-view > ul {
-  display: grid;
-  grid-template-columns: repeat(2, [col-start] 1fr);
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, [col-start] 1fr);
+    gap: 2rem;
 }
 
 .show-fretboard .system-view > ul > li {
-  width: 100%;
+    width: 100%;
 }
 
 .system-view > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .system-view > ul > li {
-  max-width: 70vw;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 960px) {
-  .system-view > ul {
-    display: block;
-  }
-  .system-view > ul > li {
-    width: 100%;
-  }
+    max-width: 70vw;
+    margin: 0 auto;
 }
 
 .system-view h3 {
-  font-size: 1rem;
-  margin: 0 0 1rem 0;
-  text-align: center;
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
 }
 
 .system-view > ul > li {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .voicing-group {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .voicing-group > li {
-  flex: 1;
-  text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .voicing {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 .voicing .inversion {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 .voicing.current {
-  background-color: white;
-  border-radius: 0.25rem;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 960px) {
+    .system-view > ul {
+        display: block;
+    }
+    .system-view > ul > li {
+        width: 100%;
+    }
+    .controls label {
+        display: flex;
+        flex-direction: column;
+    }
+    .playback-tray,
+    .controls-center form {
+        display: flex;
+        align-items: flex-end;
+    }
+    .controls label > * {
+        margin: 0;
+    }
+    .playback-tray {
+        margin-top: auto;
+    }
 }
