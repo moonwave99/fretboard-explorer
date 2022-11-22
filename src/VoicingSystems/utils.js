@@ -1,13 +1,25 @@
 import { Interval } from "@tonaljs/tonal";
 
+function isPositionAffected(p, string, degree) {
+    if (string) {
+        return p.string === string && p.degree === degree;
+    }
+    return p.degree === degree;
+}
+
 export function generateFrom({ original, mutations = [], ...rest }) {
     const voicings = original.voicings.map((x) => {
-        const positions = mutations.reduce((memo, { degree, delta }) => {
-            return memo.map((p) => ({
-                ...p,
-                fret: p.degree === degree ? p.fret + delta : p.fret,
-            }));
-        }, x.positions);
+        const positions = mutations.reduce(
+            (memo, { degree, delta, string }) => {
+                return memo.map((p) => ({
+                    ...p,
+                    fret: isPositionAffected(p, string, degree)
+                        ? p.fret + delta
+                        : p.fret,
+                }));
+            },
+            x.positions
+        );
 
         const hasNegative = positions.some(({ fret }) => fret < 0);
         const bottomString = Math.max(...positions.map((x) => x.string));
