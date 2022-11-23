@@ -2,15 +2,15 @@ import {
     systemGenerator,
     getInfoFromVoicingTypes,
     generateFrom,
-} from './utils';
+} from "./utils";
 
 const base = {
-    root: 'G',
-    title: 'Major 7th',
-    scale: 'major',
-    intervals: ['1P', '3M', '5P', '7M'],
+    root: "G",
+    title: "Major 7th",
+    scale: "major",
+    intervals: ["1P", "3M", "5P", "7M"],
     voicings: [
-        // bottom 4 strings
+        // string 6 based
         {
             positions: [
                 { degree: 1, string: 6, fret: 3 },
@@ -43,6 +43,39 @@ const base = {
                 { degree: 3, string: 2, fret: 0 },
             ],
         },
+        // string 5 based
+        {
+            positions: [
+                { degree: 1, string: 5, fret: 3 },
+                { degree: 7, string: 3, fret: 4 },
+                { degree: 3, string: 2, fret: 5 },
+                { degree: 5, string: 1, fret: 3 },
+            ],
+        },
+        {
+            positions: [
+                { degree: 3, string: 5, fret: 7 },
+                { degree: 1, string: 3, fret: 5 },
+                { degree: 5, string: 2, fret: 8 },
+                { degree: 7, string: 1, fret: 7 },
+            ],
+        },
+        {
+            positions: [
+                { degree: 5, string: 5, fret: 10 },
+                { degree: 3, string: 3, fret: 9 },
+                { degree: 7, string: 2, fret: 12 },
+                { degree: 1, string: 1, fret: 8 },
+            ],
+        },
+        {
+            positions: [
+                { degree: 7, string: 5, fret: 2 },
+                { degree: 5, string: 3, fret: 0 },
+                { degree: 1, string: 2, fret: 1 },
+                { degree: 3, string: 1, fret: 0 },
+            ],
+        },
     ],
 };
 
@@ -53,25 +86,25 @@ const majorSeventh = generateFrom({
 
 const minorMajorSeventh = generateFrom({
     original: majorSeventh,
-    title: 'Minor Maj 7th',
-    scale: 'harmonic minor',
-    intervals: ['1P', '3m', '5P', '7M'],
+    title: "Minor Maj 7th",
+    scale: "harmonic minor",
+    intervals: ["1P", "3m", "5P", "7M"],
     mutations: [{ degree: 3, delta: -1 }],
 });
 
 const dominantSeventh = generateFrom({
     original: majorSeventh,
-    title: 'Dominant 7th',
-    scale: 'mixolydian',
-    intervals: ['1P', '3M', '5P', '7m'],
+    title: "Dominant 7th",
+    scale: "mixolydian",
+    intervals: ["1P", "3M", "5P", "7m"],
     mutations: [{ degree: 7, delta: -1 }],
 });
 
 const minorSeventh = generateFrom({
     original: majorSeventh,
-    title: 'Minor 7th',
-    scale: 'minor',
-    intervals: ['1P', '3m', '5P', '7m'],
+    title: "Minor 7th",
+    scale: "minor",
+    intervals: ["1P", "3m", "5P", "7m"],
     mutations: [
         { degree: 3, delta: -1 },
         { degree: 7, delta: -1 },
@@ -80,17 +113,17 @@ const minorSeventh = generateFrom({
 
 const halfDiminished = generateFrom({
     original: minorSeventh,
-    title: 'Half Diminished',
-    scale: 'locrian',
-    intervals: ['1P', '3m', '5D', '7m'],
+    title: "Half Diminished",
+    scale: "locrian",
+    intervals: ["1P", "3m", "5D", "7m"],
     mutations: [{ degree: 5, delta: -1 }],
 });
 
 const fullDiminished = generateFrom({
     original: halfDiminished,
-    title: 'Full Diminished',
-    scale: 'diminished',
-    intervals: ['1P', '3m', '5D', '7D'],
+    title: "Full Diminished",
+    scale: "diminished",
+    intervals: ["1P", "3m", "5D", "7D"],
     mutations: [{ degree: 7, delta: -1 }],
 });
 
